@@ -1,10 +1,10 @@
 <div class="main-div" [formGroup]="taskForm">
   <div class="input-field">
     <input class="text-input" type="text" name="" id="" formControlName="taskName">
-    <button class="btn" (click)="addTask()" [disabled]="taskForm.invalid">Add</button>
+    <button class="btn" (click)="addTask()">Add</button>
   </div>
   <div class="todo-list" cdkDropList (cdkDropListDropped)="drop($event)">
-      <div cdkDrag class="item-list" *ngFor="let item of todoList;let i=index" [ngClass]="{'disabled': item.done == true}">
+      <div cdkDrag class="item-list" *ngFor="let item of todoList;let i=index" [ngClass]="{'disabled': item.done,'slide-out': item.slideOut}">
         <input type="checkbox" [checked]="item.done" (change)="taskComplete(item,i)">
         <span [ngStyle]="{'text-decoration': item.done ? 'line-through' : 'none'}">{{item.taskName}}</span>
         <button (click)="deleteTask(i)">Delete</button>

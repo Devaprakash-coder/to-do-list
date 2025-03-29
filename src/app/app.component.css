@@ -42,6 +42,47 @@
     box-shadow: 1px 3px 2px 1px #c6c6c6;
 }
 
+.invalid{    
+    animation: shaking .1s ease 5;
+}
+
+@keyframes shaking {
+    0%{
+        transform:translateX(8px)
+    }
+    20%{
+        transform:translateX(0px)
+    }
+    40%{
+        transform:translateX(8px)
+    }
+    60%{
+        transform:translateX(0px)
+    }
+    80%{
+        transform:translateX(8px)
+    }
+    100%{
+        transform:translateX(0px)
+    }
+}
+
+@keyframes slide-out {
+    0% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.slide-out {
+    animation: slide-out 0.5s ease-in-out forwards;
+}
+
+
 .todo-list{
     height: 65%;
     display: flex;
